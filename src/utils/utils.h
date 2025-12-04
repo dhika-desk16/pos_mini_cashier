@@ -1,7 +1,7 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include "structs.h"
+#include "../structs.h"
 
 void trim(char *str);
 void toUpperCase(char *str);

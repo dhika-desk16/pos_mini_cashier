@@ -2,13 +2,13 @@
 #include <cstring>
 
 #include "structs.h"
-#include "globals.h"
-#include "utils.h"
+#include "./globals/globals.h"
+#include "./utils/utils.h"
 #include "fileio.h"
-#include "auth.h"
-#include "user.h"
-#include "store.h"
-#include "shift.h"
+#include "./modules/auth/auth.h"
+#include "./modules/user/user.h"
+#include "./modules/store/store.h"
+#include "./modules/shift/shift.h"
 
 using namespace std;
 

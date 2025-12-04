@@ -1,7 +1,7 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#include "structs.h"
+#include "../structs.h"
 
 
 const int MAX_USERS = 100;

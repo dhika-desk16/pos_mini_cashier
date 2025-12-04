@@ -1,5 +1,5 @@
 #include "utils.h"
-#include "globals.h"
+#include "../globals/globals.h"
 #include <iostream>
 #include <cstring>
 #include <ctime>

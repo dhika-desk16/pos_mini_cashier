@@ -1,7 +1,7 @@
 #ifndef STORE_H
 #define STORE_H
 
-#include "structs.h"
+#include "../../structs.h"
 
 void menuStoreManagement();
 

@@ -1,6 +1,6 @@
 #include "fileio.h"
-#include "globals.h"
-#include "utils.h"
+#include "./globals/globals.h"
+#include "./utils/utils.h"
 #include <iostream>
 #include <cstdio>
 #include <sys/stat.h>

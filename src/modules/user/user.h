@@ -1,7 +1,7 @@
 #ifndef USER_H
 #define USER_H
 
-#include "structs.h"
+#include "../../structs.h"
 
 void menuUserManagement();
 

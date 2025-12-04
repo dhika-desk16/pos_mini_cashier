@@ -1,8 +1,8 @@
 #include "user.h"
-#include "globals.h"
-#include "utils.h"
-#include "fileio.h"
-#include "auth.h"
+#include "../../globals/globals.h"
+#include "../../utils/utils.h"
+#include "../../fileio.h"
+#include "../../modules/auth/auth.h"
 #include <iostream>
 #include <cstring>
 

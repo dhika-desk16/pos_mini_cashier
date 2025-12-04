@@ -1,7 +1,7 @@
 #ifndef AUTH_H
 #define AUTH_H
 
-#include "structs.h"
+#include "../../structs.h"
 
 bool login();
 void logout();
