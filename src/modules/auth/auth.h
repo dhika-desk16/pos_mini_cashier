@@ -6,7 +6,7 @@
 bool login();
 void logout();
 bool isLoggedIn();
-User* getCurrentUser();
-const char* getRoleName(Role role);
+User *getCurrentUser();
+const char *getRoleName(Role role);
 
 #endif

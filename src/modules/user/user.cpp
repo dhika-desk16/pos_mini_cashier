@@ -71,6 +71,7 @@ void createUser()
 
     clearScreen();
     printHeader("TAMBAH USER BARU");
+    displayUserTable();
 
     if (userCount >= MAX_USERS)
     {
@@ -196,6 +197,8 @@ void updateUser()
     clearScreen();
     printHeader("UPDATE USER");
 
+    displayUserTable();
+
     char userID[20];
     cout << "\nUser ID: ";
     cin.getline(userID, 20);
@@ -302,6 +305,8 @@ void deleteUser()
     clearScreen();
     printHeader("HAPUS USER");
 
+    displayUserTable();
+
     char userID[20];
     cout << "\nUser ID: ";
     cin.getline(userID, 20);
@@ -358,6 +363,8 @@ void viewUserDetail()
 {
     clearScreen();
     printHeader("DETAIL USER");
+
+    listUsers();
 
     char userID[20];
     cout << "\nUser ID: ";

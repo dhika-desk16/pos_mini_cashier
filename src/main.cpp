@@ -8,7 +8,10 @@
 #include "./modules/auth/auth.h"
 #include "./modules/user/user.h"
 #include "./modules/store/store.h"
+#include "./modules/product/product.h"
 #include "./modules/shift/shift.h"
+#include "./modules/transaction/transaction.h"
+#include "./modules/report/report.h"
 
 using namespace std;
 
@@ -132,13 +135,13 @@ void showSuperAdminMenu()
         menuStoreManagement();
         break;
     case 3:
-        cout << "\n3. Lihat Produk";
+        listProducts();
         break;
     case 4:
-        cout << "\n4. Lihat Transaksi";
+        viewTransactionHistory();
         break;
     case 5:
-        cout << "\n5. Laporan";
+        menuReporting();
         break;
     case 0:
         logout();
@@ -182,22 +185,22 @@ void showStoreManagerMenu()
     switch (choice)
     {
     case 1:
-        cout << "\nMengakses Product Management...\n";
+        menuProductManagement();
         break;
     case 2:
-        cout << "\nMengakses User List...\n";
+        listUsers();
         break;
     case 3:
         listStores();
         break;
     case 4:
-        cout << "\nMengakses Transaction List...\n";
+        viewTransactionHistory();
         break;
     case 5:
-        cout << "\nMengakses Transaction Details...\n";
+        viewTransactionDetail();
         break;
     case 6:
-        cout << "\nMengakses Reports...\n";
+        menuReporting();
         break;
     case 0:
         logout();
@@ -254,13 +257,13 @@ void showCashierMenu()
         menuShiftManagement();
         break;
     case 2:
-        cout << "\nMemulai Transaksi Baru...\n";
+        menuCashier();
         break;
     case 3:
-        cout << "\nMelihat Riwayat Transaksi...\n";
+        viewTransactionHistory();
         break;
     case 4:
-        cout << "\nMelihat Daftar Produk...\n";
+        listProducts();
         break;
     case 5:
         listUsers();
@@ -307,22 +310,22 @@ void showStockClerkMenu()
     switch (choice)
     {
     case 1:
-        cout << "\nMengakses Product Management...\n";
+        menuProductManagement();
         break;
     case 2:
-        cout << "\nMemperbarui Stok Produk...\n";
+        updateStock();
         break;
     case 3:
-        cout << "\nMelihat Produk dengan Stok Menipis...\n";
+        checkLowStock();
         break;
     case 4:
-        cout << "\nMengakses Laporan Stok...\n";
+        stockReport();
         break;
     case 5:
         listUsers();
         break;
     case 6:
-        cout << "\nMelihat Daftar Transaksi...\n";
+        viewTransactionHistory();
         break;
     case 0:
         logout();
