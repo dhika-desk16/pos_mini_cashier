@@ -1,6 +1,7 @@
 #include "report.h"
 #include "../../globals/globals.h"
 #include "../../utils/utils.h"
+#include "../../utils/menuInput.h"
 #include "../../modules/auth/auth.h"
 #include "../../modules/product/product.h"
 #include <iostream>
@@ -21,9 +22,8 @@ void menuReporting() {
         cout << "\n4. Laporan Stok";
         cout << "\n5. Laporan Stok Menipis";
         cout << "\n0. Kembali";
-        cout << "\n\nPilihan: ";
-        cin >> choice;
-        cin.ignore();
+        int choice = getMenuChoice("\nPilihan: ");
+        if (choice == -1) { pause(); continue; }
         
         switch (choice) {
             case 1: dailySalesReport(); break;

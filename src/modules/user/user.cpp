@@ -1,6 +1,7 @@
 #include "user.h"
 #include "../../globals/globals.h"
 #include "../../utils/utils.h"
+#include "../../utils/menuInput.h"
 #include "../../fileio.h"
 #include "../../modules/auth/auth.h"
 #include <iostream>
@@ -30,9 +31,8 @@ void menuUserManagement()
         cout << "\n4. Hapus User";
         cout << "\n5. Detail User";
         cout << "\n0. Kembali";
-        cout << "\n\nPilihan: ";
-        cin >> choice;
-        cin.ignore();
+        int choice = getMenuChoice("\nPilihan: ");
+        if (choice == -1) { pause(); continue; }
 
         switch (choice)
         {
@@ -107,10 +107,8 @@ void createUser()
     cout << "\n2. Store Manager";
     cout << "\n3. Cashier";
     cout << "\n4. Stock Clerk";
-    cout << "\nPilihan: ";
-    int roleChoice;
-    cin >> roleChoice;
-    cin.ignore();
+    int roleChoice = getMenuChoice("\nPilihan: ");
+        if (roleChoice == -1) { pause(); return; }
 
     switch (roleChoice)
     {
@@ -225,11 +223,8 @@ void updateUser()
     cout << "\n4. Reset Password";
     cout << "\n5. Toggle Status (Active/Inactive)";
     cout << "\n0. Batal";
-    cout << "\n\nPilihan: ";
-
-    int choice;
-    cin >> choice;
-    cin.ignore();
+    int choice = getMenuChoice("\nPilihan: ");
+    if (choice == -1) { pause(); return; }
 
     switch (choice)
     {
