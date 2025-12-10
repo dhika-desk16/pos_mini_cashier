@@ -1,6 +1,7 @@
 #include "store.h"
 #include "../../globals/globals.h"
 #include "../../utils/utils.h"
+#include "../../utils/menuInput.h"
 #include "../../fileio.h"
 #include "../auth/auth.h"
 #include <iostream>
@@ -30,9 +31,8 @@ void menuStoreManagement()
         cout << "\n4. Hapus Store";
         cout << "\n5. Detail Store";
         cout << "\n0. Kembali";
-        cout << "\n\nPilihan: ";
-        cin >> choice;
-        cin.ignore();
+        int choice = getMenuChoice("Pilihan: ");
+        if (choice == -1) { pause(); continue; }
 
         switch (choice)
         {
@@ -163,11 +163,8 @@ void updateStore()
     cout << "\n3. Telepon";
     cout << "\n4. Toggle Status";
     cout << "\n0. Batal";
-    cout << "\n\nPilihan: ";
-
-    int choice;
-    cin >> choice;
-    cin.ignore();
+    int choice = getMenuChoice("\nPilihan: ");
+    if (choice == -1) { pause(); return; }
 
     switch (choice)
     {

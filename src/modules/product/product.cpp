@@ -1,6 +1,7 @@
 #include "product.h"
 #include "../../globals/globals.h"
 #include "../../utils/utils.h"
+#include "../../utils/menuInput.h"
 #include "../../fileio.h"
 #include "../../modules/auth/auth.h"
 #include <iostream>
@@ -33,9 +34,8 @@ void menuProductManagement()
         cout << "\n7. Cek Stok Menipis";
         cout << "\n8. Kelola Kategori";
         cout << "\n0. Kembali";
-        cout << "\n\nPilihan: ";
-        cin >> choice;
-        cin.ignore();
+        int choice = getMenuChoice("\nPilihan: ");
+        if (choice == -1) { pause(); continue; }
 
         switch (choice)
         {
@@ -393,10 +393,8 @@ void updateStock()
     cout << "\n\n1. Tambah Stok";
     cout << "\n2. Kurangi Stok";
     cout << "\n3. Set Stok Baru";
-    cout << "\nPilihan: ";
-
-    int choice;
-    cin >> choice;
+    int choice = getMenuChoice("\nPilihan: ");
+    if (choice == -1) { pause(); return; }
 
     int amount;
     switch (choice)
@@ -426,6 +424,9 @@ void updateStock()
         cout << "Stok baru: ";
         cin >> product->stock;
         printSuccess("Stok berhasil diupdate!");
+        break;
+    default : 
+        cout << "Pilihan tidak valid!";
         break;
     }
 
@@ -567,6 +568,14 @@ void createCategory()
     cout << "\nNama Kategori: ";
     cin.getline(newCategory.categoryName, 50);
 
+    for (int i = 0; i < categoryCount; i++) {
+        if (strcmp(categories[i].categoryName, newCategory.categoryName) == 0) {
+            printError("Nama kategori sudah ada!");
+            pause();
+            return;
+        }
+    }
+
     categories[categoryCount++] = newCategory;
     saveCategories();
 
@@ -579,8 +588,6 @@ void listCategories()
 {
     clearScreen();
     printHeader("DAFTAR KATEGORI");
-
-    listCategories();
 
     if (categoryCount == 0)
     {

@@ -1,6 +1,7 @@
 #include "transaction.h"
 #include "../../globals/globals.h"
 #include "../../utils/utils.h"
+#include "../../utils/menuInput.h"
 #include "../../fileio.h"
 #include "../../modules/auth/auth.h"
 #include "../../modules/shift/shift.h"
@@ -49,8 +50,8 @@ void menuCashier()
         cout << "\n6. Riwayat Transaksi";
         cout << "\n0. Kembali";
         cout << "\n\nPilihan: ";
-        cin >> choice;
-        cin.ignore();
+        int choice = getMenuChoice("\nPilihan: ");
+        if (choice == -1) { pause(); continue; }
 
         switch (choice)
         {

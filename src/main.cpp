@@ -4,6 +4,7 @@
 #include "structs.h"
 #include "./globals/globals.h"
 #include "./utils/utils.h"
+#include "./utils/menuInput.h"
 #include "fileio.h"
 #include "./modules/auth/auth.h"
 #include "./modules/user/user.h"
@@ -102,7 +103,6 @@ void showMainMenu()
 
 void showSuperAdminMenu()
 {
-    int choice;
 
     clearScreen();
     printHeader("MENU SUPER ADMIN");
@@ -122,9 +122,15 @@ void showSuperAdminMenu()
     cout << "\n\n=== SYSTEM ===";
     cout << "\n0. Logout";
 
-    cout << "\n\nPilihan: ";
-    cin >> choice;
-    cin.ignore();
+    
+    int choice = getMenuChoice("\n\nPilihan: ");
+    if (choice == -1)
+    {
+        pause();       
+        clearScreen(); 
+        return showSuperAdminMenu(); 
+    }
+
 
     switch (choice)
     {
@@ -154,7 +160,6 @@ void showSuperAdminMenu()
 
 void showStoreManagerMenu()
 {
-    int choice;
 
     clearScreen();
     printHeader("MENU STORE MANAGER");
@@ -177,10 +182,15 @@ void showStoreManagerMenu()
 
     cout << "\n\n=== SYSTEM ===";
     cout << "\n0. Logout";
+    
+    int choice = getMenuChoice("\n\nPilihan: ");
+    if (choice == -1)
+    {
+        pause();       
+        clearScreen(); 
+        return showStoreManagerMenu(); 
+    }
 
-    cout << "\n\nPilihan: ";
-    cin >> choice;
-    cin.ignore();
 
     switch (choice)
     {
@@ -213,7 +223,6 @@ void showStoreManagerMenu()
 
 void showCashierMenu()
 {
-    int choice;
 
     clearScreen();
     printHeader("MENU CASHIER");
@@ -247,9 +256,15 @@ void showCashierMenu()
     cout << "\n\n=== SYSTEM ===";
     cout << "\n0. Logout";
 
-    cout << "\n\nPilihan: ";
-    cin >> choice;
-    cin.ignore();
+    
+    int choice = getMenuChoice("\n\nPilihan: ");
+    if (choice == -1)
+    {
+        pause();       
+        clearScreen(); 
+        return showCashierMenu(); 
+    }
+    
 
     switch (choice)
     {
@@ -279,7 +294,6 @@ void showCashierMenu()
 
 void showStockClerkMenu()
 {
-    int choice;
 
     clearScreen();
     printHeader("MENU STOCK CLERK");
@@ -303,9 +317,14 @@ void showStockClerkMenu()
     cout << "\n\n=== SYSTEM ===";
     cout << "\n0. Logout";
 
-    cout << "\n\nPilihan: ";
-    cin >> choice;
-    cin.ignore();
+    
+    int choice = getMenuChoice("\n\nPilihan: ");
+    if (choice == -1)
+    {
+        pause();       
+        clearScreen(); 
+        return showStockClerkMenu();
+    }
 
     switch (choice)
     {
